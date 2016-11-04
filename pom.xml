@@ -32,19 +32,37 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-web</artifactId>
         <version>1.4.1.RELEASE</version>
+        <exclusions>
+            <exclusion>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-tomcat</artifactId>
+            </exclusion>
+        </exclusions>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-jetty -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-jetty</artifactId>
+        <version>1.4.1.RELEASE</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-server -->
+    <!--
+    <dependency>
+        <groupId>org.eclipse.jetty</groupId>
+        <artifactId>jetty-server</artifactId>
+        <version>9.4.0.M1</version>
+    </dependency>
+    -->
   </dependencies>
 
   <build>
       <plugins>
-          <plugin>
-              <groupId>org.codehaus.mojo</groupId>
-              <artifactId>exec-maven-plugin</artifactId>
-              <version>1.5.0</version>
-              <configuration>
-                  <mainClass>masterSpringMvc.AppApplication</mainClass>
-              </configuration>
-          </plugin>
+        <plugin>
+            <!-- https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-maven-plugin -->
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-maven-plugin</artifactId>
+            <version>9.4.0.M1</version>
+        </plugin>
       </plugins>
   </build>
 </project>
